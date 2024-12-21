@@ -1,7 +1,7 @@
 from ForImages.image_handler import ImageHandler
 
 def main():
-    image_path = input("Введите полное название картинки без  (Например, image.jpg): ")
+    image_path = input("Введите полное название картинки (Например, image.jpg): ")
     try:
         handler = ImageHandler(f"Images/{image_path}")
 
