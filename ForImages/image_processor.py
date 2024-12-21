@@ -6,7 +6,7 @@ class ImageProcessor:
 
     def blur_image(self):
         self.image = self.image.filter(ImageFilter.BLUR)
-        print("Blur filter applied.")
+        print("Фильтр блюра добавлен")
 
     def add_text(self):
         draw = ImageDraw.Draw(self.image)
@@ -15,7 +15,7 @@ class ImageProcessor:
             font = ImageFont.truetype("arial.ttf", 20)
         except OSError:
             font = ImageFont.load_default()
-            print("Default font used.")
+            print("Использован стандартный шрифт.")
 
         # Вычисляем размеры текста
         text_bbox = draw.textbbox((0, 0), text, font=font)
@@ -27,4 +27,4 @@ class ImageProcessor:
 
         # Добавляем текст
         draw.text(position, text, fill=(255, 255, 255), font=font)
-        print("Text added.")
+        print("Добавлен текст.")

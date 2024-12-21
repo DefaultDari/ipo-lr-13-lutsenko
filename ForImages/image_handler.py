@@ -7,16 +7,16 @@ class ImageHandler:
         try:
             self.image = Image.open(self.image_path)
         except FileNotFoundError:
-            print(f"Error: File '{self.image_path}' not found.")
+            print(f"Ошибка: Файл '{self.image_path}' не найден.")
             raise
 
     def resize_image(self, size=(300, 300)):
         self.image = self.image.resize(size)
-        print(f"Image resized to {size[0]}x{size[1]} pixels.")
+        print(f"Размер картинки изменен на {size[0]}x{size[1]} пикселей.")
 
     def save_image(self, filename="output.png"):
         self.image.save(filename, "PNG")
-        print(f"Image saved as {filename}.")
+        print(f"Картинка сохранена как {filename}.")
 
     def process_image(self):
         return ImageProcessor(self.image)
